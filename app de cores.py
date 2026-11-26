@@ -32,6 +32,26 @@ frame_baixo = Frame(janela, bg=cor_fundo)
 # Posicionando o frame inferior para ocupar duas colunas
 frame_baixo.grid(row=2, column=0, columnspan=2, pady=15)
 
+# Função chamada ao mover um controle RGB; recebe o valor enviado pelo Scale.
+def escala(valor):
+    # Lê os valores atuais dos três controles (de 0 a 255).
+    r = s_red.get()
+    g = s_green.get()
+    b = s_blue.get()
+
+    # Monta uma representação textual do RGB (não utilizada no restante do código).
+    rgb = f"{r}, {g}, {b}"
+
+    # Converte cada valor em dois dígitos hexadecimais (%02x).
+    hexadecimal = "#%02x%02x%02x" % (r, g, b)
+
+    # Atualiza a cor de fundo da área de visualização.
+    tela["bg"] = hexadecimal
+
+    # Apaga o conteúdo anterior do campo e insere o novo código hexadecimal.
+    e_cor.delete(0, END)
+    e_cor.insert(0, hexadecimal)
+
 # Controles deslizantes RGB no frame esquerdo
 # Cria o rótulo da cor vermelha (RED).
 l_red = Label(
@@ -48,6 +68,7 @@ l_red.grid(row=0, column=0)
 # Cria o controle deslizante vermelho, com valores de 0 a 255.
 s_red = Scale(
     frame_esquerda,
+    command=escala,
     from_=0,
     to=255,
     length=150,
@@ -73,6 +94,7 @@ l_green.grid(row=1, column=0)
 # Cria o controle deslizante verde, com valores de 0 a 255.
 s_green = Scale(
     frame_esquerda,
+    command=escala,
     from_=0,
     to=255,
     length=150,
@@ -98,6 +120,7 @@ l_blue.grid(row=2, column=0)
 # Cria o controle deslizante azul, com valores de 0 a 255.
 s_blue = Scale(
     frame_esquerda,
+    command=escala,
     from_=0,
     to=255,
     length=150,
