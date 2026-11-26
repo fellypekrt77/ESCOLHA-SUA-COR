@@ -108,5 +108,30 @@ s_blue = Scale(
 # Posiciona o controle azul ao lado do rótulo.
 s_blue.grid(row=2, column=1)
 
+# Cria o rótulo do código hexadecimal no frame inferior.
+l_rgb = Label(
+    frame_baixo,
+    text="CÓDIGO HEX :",
+    bg=cor_fundo,
+    font=("Verdana", 14, "bold"),
+)
+# Posiciona o rótulo na primeira coluna do frame inferior.
+l_rgb.grid(row=0, column=0, padx=5)
+
+# Cria o campo de texto que exibe o código hexadecimal, com texto centralizado.
+e_cor = Entry(frame_baixo, width=10, font=("Ivy", 10, "bold"), justify=CENTER)
+# Posiciona o campo ao lado do rótulo.
+e_cor.grid(row=0, column=1, padx=5)
+
+# Cria o texto com o nome do aplicativo no frame inferior.
+l_app_nome = Label(
+    frame_baixo,
+    text="ESCOLHA SUA COR!",
+    bg=cor_fundo,
+    font=("Verdana", 15, "bold"),
+)
+# Posiciona o nome na quarta coluna do frame inferior.
+l_app_nome.grid(row=0, column=3, padx=40)
+
 # Mantendo a janela aberta e aguardando as ações do usuário
 janela.mainloop()
