@@ -6,7 +6,7 @@ import tkinter.messagebox
 # Definindo as cores utilizadas no aplicativo
 cor_tela = "#FFFFFF"  # Branco
 cor_fundo = "#DBDCF7"  # Azul claro
-cor2 = "#030303"  # Preto
+cor2 = "#030303"  # Preto (definido, mas não utilizado no código atual).
 
 # Criando a janela principal do aplicativo
 janela = Tk()
@@ -82,13 +82,13 @@ l_red.grid(row=0, column=0)
 # Cria o controle deslizante vermelho, com valores de 0 a 255.
 s_red = Scale(
     frame_esquerda,
-    command=escala,
+    command=escala,  # Chama a função ao mover o controle.
     from_=0,
     to=255,
     length=150,
     bg=cor_fundo,
     fg="red",
-    orient=HORIZONTAL,
+    orient=HORIZONTAL,  # Define a orientação horizontal.
 )
 # Posiciona o controle vermelho ao lado do rótulo.
 s_red.grid(row=0, column=1)
@@ -108,13 +108,13 @@ l_green.grid(row=1, column=0)
 # Cria o controle deslizante verde, com valores de 0 a 255.
 s_green = Scale(
     frame_esquerda,
-    command=escala,
+    command=escala,  # Chama a função ao mover o controle.
     from_=0,
     to=255,
     length=150,
     bg=cor_fundo,
     fg="green",
-    orient=HORIZONTAL,
+    orient=HORIZONTAL,  # Define a orientação horizontal.
 )
 # Posiciona o controle verde ao lado do rótulo.
 s_green.grid(row=1, column=1)
@@ -134,13 +134,13 @@ l_blue.grid(row=2, column=0)
 # Cria o controle deslizante azul, com valores de 0 a 255.
 s_blue = Scale(
     frame_esquerda,
-    command=escala,
+    command=escala,  # Chama a função ao mover o controle.
     from_=0,
     to=255,
     length=150,
     bg=cor_fundo,
     fg="blue",
-    orient=HORIZONTAL,
+    orient=HORIZONTAL,  # Define a orientação horizontal.
 )
 # Posiciona o controle azul ao lado do rótulo.
 s_blue.grid(row=2, column=1)
@@ -169,8 +169,8 @@ b_copiar = Button(
     height=2,
     bg=cor_fundo,
     font=("Arial", 11, "bold"),
-    relief=RAISED,
-    overrelief=RIDGE,
+    relief=RAISED,  # Borda com aparência elevada.
+    overrelief=RIDGE,  # Estilo da borda quando o mouse passa sobre o botão.
 )
 # Posiciona o botão na terceira coluna do frame inferior.
 b_copiar.grid(row=0, column=2, padx=5)
