@@ -21,14 +21,42 @@ janela.configure(bg=cor_fundo)
 tela = Label(janela, bg=cor_tela, width=38, height=9, bd=2, relief=SOLID)
 # Posicionando a tela e definindo seus espaçamentos
 tela.grid(row=1, column=1, padx=(60, 10), pady=10)
+
 # Criando o frame que agrupa os controles deslizantes RGB
 frame_esquerda = Frame(janela, bg=cor_fundo)
 # Posicionando o frame no lado esquerdo da janela
 frame_esquerda.grid(row=1, column=0, padx=20, pady=5)
+
 # Criando o frame inferior para o código hexadecimal, botão e título
 frame_baixo = Frame(janela, bg=cor_fundo)
 # Posicionando o frame inferior para ocupar duas colunas
 frame_baixo.grid(row=2, column=0, columnspan=2, pady=15)
+
+# Controles deslizantes RGB no frame esquerdo
+# Cria o rótulo da cor vermelha (RED).
+l_red = Label(
+    frame_esquerda,
+    text="RED",
+    width=7,
+    bg=cor_fundo,
+    fg="red",
+    anchor="nw",
+    font=("Arial", 14, "bold"),
+)
+# Posiciona o rótulo na primeira linha, coluna 0.
+l_red.grid(row=0, column=0)
+# Cria o controle deslizante vermelho, com valores de 0 a 255.
+s_red = Scale(
+    frame_esquerda,
+    from_=0,
+    to=255,
+    length=150,
+    bg=cor_fundo,
+    fg="red",
+    orient=HORIZONTAL,
+)
+# Posiciona o controle vermelho ao lado do rótulo.
+s_red.grid(row=0, column=1)
 
 # Mantendo a janela aberta e aguardando as ações do usuário
 janela.mainloop()
