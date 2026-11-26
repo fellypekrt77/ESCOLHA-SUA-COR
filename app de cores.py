@@ -58,5 +58,55 @@ s_red = Scale(
 # Posiciona o controle vermelho ao lado do rótulo.
 s_red.grid(row=0, column=1)
 
+# Cria o rótulo da cor verde (GREEN).
+l_green = Label(
+    frame_esquerda,
+    text="GREEN",
+    width=7,
+    bg=cor_fundo,
+    fg="green",
+    anchor="nw",
+    font=("Arial", 14, "bold"),
+)
+# Posiciona o rótulo na segunda linha, coluna 0.
+l_green.grid(row=1, column=0)
+# Cria o controle deslizante verde, com valores de 0 a 255.
+s_green = Scale(
+    frame_esquerda,
+    from_=0,
+    to=255,
+    length=150,
+    bg=cor_fundo,
+    fg="green",
+    orient=HORIZONTAL,
+)
+# Posiciona o controle verde ao lado do rótulo.
+s_green.grid(row=1, column=1)
+
+# Cria o rótulo da cor azul (BLUE).
+l_blue = Label(
+    frame_esquerda,
+    text="BLUE",
+    width=7,
+    bg=cor_fundo,
+    fg="blue",
+    anchor="nw",
+    font=("Arial", 14, "bold"),
+)
+# Posiciona o rótulo na terceira linha, coluna 0.
+l_blue.grid(row=2, column=0)
+# Cria o controle deslizante azul, com valores de 0 a 255.
+s_blue = Scale(
+    frame_esquerda,
+    from_=0,
+    to=255,
+    length=150,
+    bg=cor_fundo,
+    fg="blue",
+    orient=HORIZONTAL,
+)
+# Posiciona o controle azul ao lado do rótulo.
+s_blue.grid(row=2, column=1)
+
 # Mantendo a janela aberta e aguardando as ações do usuário
 janela.mainloop()
