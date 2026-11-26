@@ -52,6 +52,20 @@ def escala(valor):
     e_cor.delete(0, END)
     e_cor.insert(0, hexadecimal)
 
+# Função acionada pelo botão Copiar a cor.
+def onClick():
+    # Exibe a mensagem de confirmação antes de executar a cópia.
+    tkinter.messagebox.showinfo("Cor", "A cor foi copiada!")
+
+    # Cria uma janela auxiliar e a mantém oculta.
+    clip = Tk()
+    clip.withdraw()
+    # Limpa a área de transferência e envia o conteúdo atual do campo.
+    clip.clipboard_clear()
+    clip.clipboard_append(e_cor.get())
+    # Encerra a janela auxiliar.
+    clip.destroy()
+
 # Controles deslizantes RGB no frame esquerdo
 # Cria o rótulo da cor vermelha (RED).
 l_red = Label(
@@ -145,6 +159,21 @@ l_rgb.grid(row=0, column=0, padx=5)
 e_cor = Entry(frame_baixo, width=10, font=("Ivy", 10, "bold"), justify=CENTER)
 # Posiciona o campo ao lado do rótulo.
 e_cor.grid(row=0, column=1, padx=5)
+
+# Cria o botão de copiar e associa seu clique à função onClick.
+b_copiar = Button(
+    frame_baixo,
+    command=onClick,
+    text="Copiar a cor",
+    width=15,
+    height=2,
+    bg=cor_fundo,
+    font=("Arial", 11, "bold"),
+    relief=RAISED,
+    overrelief=RIDGE,
+)
+# Posiciona o botão na terceira coluna do frame inferior.
+b_copiar.grid(row=0, column=2, padx=5)
 
 # Cria o texto com o nome do aplicativo no frame inferior.
 l_app_nome = Label(
